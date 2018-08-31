@@ -33,3 +33,38 @@ class Stack {
     return node.data;
   }
 }
+//starTrek and add Kirk, Spock, McCoy, Scotty
+let starTrek = new Stack();
+
+function main(){
+  starTrek.push('Kirk');
+  starTrek.push('Spock');
+  starTrek.push('McCoy');
+  starTrek.push('Scotty');
+
+  // peek(starTrek);
+  // display(starTrek);
+
+  starTrek.pop();
+  starTrek.pop();
+  display(starTrek);
+}
+main();
+
+function peek(stack){
+  console.log(JSON.stringify(stack.top));
+}
+
+function display(stack){
+  let node = stack.top;
+
+  if(!node){
+    console.log('empty stack');
+    return;
+  }
+
+  while(node !== null){
+    console.log(node.data);
+    node = node.next;
+  }
+}
